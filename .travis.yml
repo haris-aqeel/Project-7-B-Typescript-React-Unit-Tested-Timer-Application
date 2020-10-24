@@ -1,4 +1,5 @@
-language: "node_js"
+language: node_js
+node_js:
   - "stable"
 
 script:
@@ -9,7 +10,7 @@ script:
 deploy:
   provider: surge
   skip_cleanup: true
-  domain: 
+  domain: timer-app-unit-tested.surge.sh
   project: ./build/
 
 on: 
