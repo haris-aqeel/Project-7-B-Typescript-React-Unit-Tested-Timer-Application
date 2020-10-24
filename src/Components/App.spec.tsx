@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import App from './App'
-
+import Timer from './Timer/Timer'
 
 
 describe('Testing A React App component', ()=> {
@@ -13,14 +13,10 @@ describe('Testing A React App component', ()=> {
 
     })
 
-    // it('should contain a <Timer/> Component', ()=> {
+    it('should contain a <Timer/> Component', ()=> {
 
-    //     expect(selectAppComponent.find('div').length).toEqual(1);
+        expect(selectAppComponent.containsMatchingElement(<Timer />)).toEqual(true);
 
-    // })
-
-
-
-
+    })
 
 })
