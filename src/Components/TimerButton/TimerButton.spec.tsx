@@ -9,8 +9,8 @@ describe('Testing Timer Button Component', ()=>{
     beforeEach(() => {
         timerbutton = shallow(
         <TimerButton
-            fn={jest.fn()}
-            value={""}
+            buttonAction={jest.fn()}
+            buttonValue={""}
         />)
     })
 
@@ -28,5 +28,41 @@ describe('Testing Timer Button Component', ()=>{
         expect(timerbutton.find('button').length).toEqual(1)
     })
 
+
+})
+
+
+describe('Testing Functionality of Timer Component', ()=> {
+    
+    let mockedFunction: jest.Mock<any, any>;
+
+    beforeEach(()=>{
+         mockedFunction = jest.fn();
+    })
+
+    it('invokes startTimer when the start button is clicked',()=>{
+
+        const wrapper = shallow(<TimerButton buttonAction={mockedFunction} buttonValue='Start'/>);
+        expect(mockedFunction).toHaveBeenCalledTimes(0);    
+        wrapper.find('button').simulate('click');
+        expect(mockedFunction).toHaveBeenCalledTimes(1);
+       
+    })
+
+    it('invokes startTimer when the stop button is clicked',()=>{
+
+        const wrapper = shallow(<TimerButton buttonAction={mockedFunction} buttonValue='Stop'/>);
+        expect(mockedFunction).toHaveBeenCalledTimes(0);    
+        wrapper.find('button').simulate('click');
+        expect(mockedFunction).toHaveBeenCalledTimes(1);
+    })
+
+    it('invokes startTimer when the rest button is clicked',()=>{
+
+        const wrapper = shallow(<TimerButton buttonAction={mockedFunction} buttonValue='Reset'/>);
+        expect(mockedFunction).toHaveBeenCalledTimes(0);    
+        wrapper.find('button').simulate('click');
+        expect(mockedFunction).toHaveBeenCalledTimes(1);
+    })
 
 })

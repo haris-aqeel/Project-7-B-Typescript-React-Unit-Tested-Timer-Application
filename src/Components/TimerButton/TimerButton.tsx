@@ -1,20 +1,25 @@
 import React from 'react'
 
 type TimerButton = {
-    fn: () => void;
-    value: string;
+    buttonAction: () => void;
+    buttonValue: string;
 }
 
 
 
-const TimerButton = ({fn, value}:TimerButton) => {
+const TimerButton = ({buttonAction, buttonValue}:TimerButton) => {
     return (
         <div className='timerbutton'>
+            
             <button
-            type='button'
-            onClick={fn}>
-            {value}
+              type='button'
+              onClick={buttonAction}
+            >
+
+              {buttonValue}
+
             </button>
+
         </div>
     )
 }

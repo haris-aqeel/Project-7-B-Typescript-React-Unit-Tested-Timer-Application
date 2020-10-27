@@ -1,30 +1,28 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import TimerButton from '../TimerButton/TimerButton'
 
 
-const Timer = () => {
+function Timer(): JSX.Element {
 
-        const [minutes, setminutes] = useState('00')
-        const [seconds, setseconds] = useState('00')
-        const [milliseconds, setmilliseconds] = useState('00')
+        const [minutes, setminutes] = useState(25);
+        const [seconds, setseconds] = useState(0);
+        const [isOn, setisOn] = useState(false);
 
         const startTimer = () => {
-         
-        setTimeout(()=>{
-            setmilliseconds((+milliseconds+1).toString())
-         },100)
+            setisOn(true);
         }
 
         const stopTimer = () => {
-            console.log('Timer is stopped .........')
+            console.log('stop timer')
            }
 
         const resetTimer = () => {
-            console.log('Timer is reset .........')
+            console.log('resest timer')
            }
 
 
         return (
+
         <div className='timer'>
         
             <h1>
@@ -32,14 +30,20 @@ const Timer = () => {
             </h1>
 
             <h2>
-                {minutes}: {seconds}: {milliseconds}
+
+                
+                {/* {minutes}: {seconds}: {milliseconds} */}
             </h2>
 
             <div>
-                <TimerButton value={'Start'} fn={startTimer} />
-                <TimerButton value={'Stop'}  fn={stopTimer}/>
-                <TimerButton value={'Reset'} fn={resetTimer} />
+                <TimerButton  buttonAction={startTimer} buttonValue={'Start'} />
+                <TimerButton  buttonAction={stopTimer} buttonValue={'Stop'} />
+                <TimerButton  buttonAction={resetTimer} buttonValue={'Reset'} />
             </div>
+
+            <p className='state'>
+                {isOn ===  true ? "true": "false"}
+            </p>
 
 
         </div>
