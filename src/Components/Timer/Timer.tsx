@@ -9,13 +9,7 @@ function Timer(): JSX.Element {
         const [milliseconds, setmilliseconds] = useState<string>("00");
         const [isOn, setisOn] = useState<string>("false");
         const [intervalId, setIntervalId] = useState<any>();
-        var count1: number = +milliseconds;
-        var count2: number = +seconds;
-        var count3: number = +minutes;
-
-        // var myInterval:ReturnType<typeof setInterval>;
-
-
+       
         useEffect(() => {
             var count1: number = +milliseconds;
             var count2: number = +seconds;
