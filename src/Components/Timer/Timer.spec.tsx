@@ -1,9 +1,8 @@
 import React from 'react'
-import {mount, ReactWrapper, shallow, ShallowWrapper} from 'enzyme';
+import { shallow, ShallowWrapper} from 'enzyme';
 import Timer from './Timer'
-import TimerButton from '../TimerButton/TimerButton';
-import { render, fireEvent, getByTestId, getByText} from "@testing-library/react";
-import { start } from 'repl';
+import { render, fireEvent, getByTestId} from "@testing-library/react";
+
 
 
 describe('Testing User Interface of our Timer Component', ()=> {
@@ -56,9 +55,9 @@ describe('Testing Functionalities of Timer Component', () => {
     const thirdText = getByTestId(container,'millisecond');
     fireEvent.click(clickOnElement); 
     expect(countState.textContent).toBe("false");
-    expect(minuteText.textContent).toBe("0");
-    expect(secondText.textContent).toBe("0");
-    expect(thirdText.textContent).toBe("0");
+    expect(minuteText.textContent).toBe("00");
+    expect(secondText.textContent).toBe("00");
+    expect(thirdText.textContent).toBe("00");
 
    
 

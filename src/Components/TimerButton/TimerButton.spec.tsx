@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
 import TimerButton from './TimerButton'
-import Timer from '../Timer/Timer'
+
 
 describe('Testing Timer Button Component', ()=>{
     
