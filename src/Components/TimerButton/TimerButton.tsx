@@ -12,8 +12,9 @@ const TimerButton = ({buttonAction, buttonValue}:TimerButton) => {
         <div className='timerbutton'>
             
             <button
+              data-testid = {buttonValue}
               type='button'
-              onClick={buttonAction}
+              onClick={() => buttonAction()}
             >
 
               {buttonValue}

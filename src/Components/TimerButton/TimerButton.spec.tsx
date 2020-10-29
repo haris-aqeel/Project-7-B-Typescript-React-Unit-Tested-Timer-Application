@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
 import TimerButton from './TimerButton'
+import Timer from '../Timer/Timer'
 
 describe('Testing Timer Button Component', ()=>{
     
@@ -45,13 +46,13 @@ describe('Testing Functionality of Timer Component', ()=> {
         const wrapper = shallow(<TimerButton buttonAction={mockedFunction} buttonValue='Start'/>);
         expect(mockedFunction).toHaveBeenCalledTimes(0);    
         wrapper.find('button').simulate('click');
-        expect(mockedFunction).toHaveBeenCalledTimes(1);
-       
+        expect(mockedFunction).toHaveBeenCalledTimes(1);       
     })
 
     it('invokes startTimer when the stop button is clicked',()=>{
 
         const wrapper = shallow(<TimerButton buttonAction={mockedFunction} buttonValue='Stop'/>);
+        
         expect(mockedFunction).toHaveBeenCalledTimes(0);    
         wrapper.find('button').simulate('click');
         expect(mockedFunction).toHaveBeenCalledTimes(1);
