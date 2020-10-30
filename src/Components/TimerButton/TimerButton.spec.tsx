@@ -25,10 +25,6 @@ describe('Testing Timer Button Component', ()=>{
         expect(timerbutton.hasClass('timerbutton')).toEqual(true)
     })
 
-    it('should contain button Component', ()=>{
-        expect(timerbutton.find('button').length).toEqual(1)
-    })
-
 
 })
 
@@ -45,24 +41,24 @@ describe('Testing Functionality of Timer Component', ()=> {
 
         const wrapper = shallow(<TimerButton buttonAction={mockedFunction} buttonValue='Start'/>);
         expect(mockedFunction).toHaveBeenCalledTimes(0);    
-        wrapper.find('button').simulate('click');
+        wrapper.find('#Start').simulate('click');
         expect(mockedFunction).toHaveBeenCalledTimes(1);       
     })
 
-    it('invokes startTimer when the stop button is clicked',()=>{
+    it('invokes pauseTimer when the stop button is clicked',()=>{
 
         const wrapper = shallow(<TimerButton buttonAction={mockedFunction} buttonValue='Stop'/>);
         
         expect(mockedFunction).toHaveBeenCalledTimes(0);    
-        wrapper.find('button').simulate('click');
+        wrapper.find('#Stop').simulate('click');
         expect(mockedFunction).toHaveBeenCalledTimes(1);
     })
 
-    it('invokes startTimer when the rest button is clicked',()=>{
+    it('invokes resetTimer when the rest button is clicked',()=>{
 
         const wrapper = shallow(<TimerButton buttonAction={mockedFunction} buttonValue='Reset'/>);
         expect(mockedFunction).toHaveBeenCalledTimes(0);    
-        wrapper.find('button').simulate('click');
+        wrapper.find('#Reset').simulate('click');
         expect(mockedFunction).toHaveBeenCalledTimes(1);
     })
 

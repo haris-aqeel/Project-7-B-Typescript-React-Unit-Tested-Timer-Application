@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.timer{
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 100px 0px;
+    height: 94vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #efefef;
+    font-family: Roboto;
+}
+
+.timer h1{
+    font-size: 40px;
+    margin: 30px 0px;
+    text-align: center;
+}
+
+.TimeDisplay{
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 360px) {
+    .AllButtons{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.AllButtons{
+    display: flex;
+}
+
+
+#Start{
+    background-color: lightgreen;
+}
+
+#Stop{
+
+    background-color: rgb(241, 71, 71);
+
+}
+
+#Reset{
+
+    background-color: rgb(156, 53, 156);
+}
+
+.hideit{
+    visibility: hidden;
+}
